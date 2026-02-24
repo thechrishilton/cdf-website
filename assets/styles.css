@@ -277,6 +277,12 @@ p { margin-bottom: 1rem; }
     top: 72px; left: 0; right: 0; background: var(--white);
     padding: 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   }
+  .nav-dropdown-menu {
+    position: static; box-shadow: none; margin-top: 0; padding: 0 0 0 16px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-links.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a { padding: 8px 12px; }
   h1 { font-size: 1.8rem; }
   .hero { padding: 120px 0 60px; }
   .section { padding: 48px 0; }
