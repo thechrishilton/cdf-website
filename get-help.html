@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a free cybersecurity consultation from CyberDefense Firm. We help schools, churches, and small businesses protect themselves from cyber threats.">
+  <title>Get Free Help — CyberDefense Firm</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .form-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .form-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #1a1a1a;
+      background-color: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #1B3A5C;
+      box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-row .form-group {
+      margin-bottom: 0;
+    }
+
+    .sidebar {
+      background-color: #f0f4f8;
+      border-left: 4px solid #1B3A5C;
+      padding: 32px;
+      border-radius: 6px;
+    }
+
+    .sidebar h3 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+    }
+
+    .sidebar-step {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    .sidebar-step:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .sidebar-step-number {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-color: #1B3A5C;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: 600;
+      margin-right: 12px;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-step-title {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-step-text {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .sidebar-note {
+      background-color: #fff;
+      border: 1px solid #d0d0d0;
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin-top: 28px;
+    }
+
+    .sidebar-call {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid #d0d0d0;
+    }
+
+    .sidebar-call-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-call-link {
+      display: inline-block;
+      color: #1B3A5C;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .sidebar-call-link:hover {
+      text-decoration: underline;
+    }
+
+    .qualifies-section {
+      background-color: #f0f4f8;
+      padding: 48px 0;
+      margin-top: 60px;
+    }
+
+    .qualifies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .qualifies-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .qualifies-item {
+      background-color: #fff;
+      padding: 28px;
+      border-radius: 8px;
+      border-left: 4px solid #1B3A5C;
+    }
+
+    .qualifies-item h4 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .qualifies-item p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-small.png" alt="CyberDefense Firm">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">What We Do</a></li>
+        <li><a href="consulting.html">Pro Consulting</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Support Us &#9662;</a>
+          <div class="nav-dropdown-menu">
+            <a href="donate.html">Donate</a>
+            <a href="donate.html#volunteer">Volunteer</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="get-help.html" class="btn btn-primary">Get Free Help</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Get Free Help</h1>
+      <p>No cost. No strings. Just real cybersecurity support for your organization.</p>
+    </div>
+  </section>
+
+  <!-- REQUEST FORM SECTION -->
+  <section class="content-section">
+    <div class="container">
+      <div class="form-layout">
+        <!-- LEFT COLUMN: FORM -->
+        <div>
+          <form action="https://formspree.io/f/xplaceholder" method="POST">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="orgName">Organization Name *</label>
+              <input type="text" id="orgName" name="orgName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="orgType">Organization Type *</label>
+              <select id="orgType" name="orgType" required>
+                <option value="">— Select an option —</option>
+                <option value="school">School</option>
+                <option value="church">Church/House of Worship</option>
+                <option value="smallbiz">Small Business</option>
+                <option value="veteran">Veteran-Owned Business</option>
+                <option value="nonprofit">Other Nonprofit</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(optional)">
+            </div>
+
+            <div class="form-group">
+              <label for="helpText">How can we help? *</label>
+              <textarea id="helpText" name="helpText" placeholder="Tell us about your organization and what cybersecurity concerns you have..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 24px; font-size: 1rem;">Request Free Consultation</button>
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: SIDEBAR -->
+        <div class="sidebar">
+          <h3>What to Expect</h3>
+
+          <div class="sidebar-step">
+            <div>
+              <span class="sidebar-step-number">1</span>
+              <span class="sidebar-step-title">Submit this form</span>
+            </div>
+            <p class="sidebar-step-text">Tell us about your organization and what you need help with.</p>
+          </div>
+
+          <div class="sidebar-step">
+            <div>
+              <span class="sidebar-step-number">2</span>
+              <span class="sidebar-step-title">We'll review your request</span>
+            </div>
+            <p class="sidebar-step-text">Our team will review your request within 48 hours.</p>
+          </div>
+
+          <div class="sidebar-step">
+            <div>
+              <span class="sidebar-step-number">3</span>
+              <span class="sidebar-step-title">Schedule your free call</span>
+            </div>
+            <p class="sidebar-step-text">We'll contact you to schedule a free 30-minute consultation to assess your needs.</p>
+          </div>
+
+          <div class="sidebar-note">
+            All services are provided at no cost to qualifying organizations in Riverside County, CA.
+          </div>
+
+          <div class="sidebar-call">
+            <p class="sidebar-call-text">Prefer to call?</p>
+            <a href="tel:7608748729" class="sidebar-call-link">760-874-8729</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO QUALIFIES SECTION -->
+  <section class="qualifies-section">
+    <div class="container">
+      <h2 style="text-align: center;">Who Qualifies?</h2>
+      <p style="text-align: center; color: #555; margin-bottom: 32px; font-size: 1.05rem;">We provide free cybersecurity support to qualifying organizations in Riverside County and surrounding areas. Here's who we serve:</p>
+
+      <div class="qualifies-grid">
+        <div class="qualifies-item">
+          <h4>Schools & Educational Institutions</h4>
+          <p>Public and private K-12 schools, charter schools, and educational nonprofits. We help protect student data, staff systems, and critical learning infrastructure.</p>
+        </div>
+
+        <div class="qualifies-item">
+          <h4>Churches & Houses of Worship</h4>
+          <p>Faith-based organizations serving your community. We protect donor information, member records, and facility systems while respecting your mission.</p>
+        </div>
+
+        <div class="qualifies-item">
+          <h4>Small Businesses</h4>
+          <p>Local businesses with limited IT resources. We help you establish baseline security, protect customer data, and keep operations secure without breaking the budget.</p>
+        </div>
+
+        <div class="qualifies-item">
+          <h4>Veteran-Owned Organizations</h4>
+          <p>Businesses and nonprofits founded by veterans. We're committed to serving those who've served, with practical security solutions tailored to your needs.</p>
+        </div>
+      </div>
+
+      <div style="background-color: #fff; padding: 28px; border-radius: 8px; margin-top: 36px; border-left: 4px solid #d4af37;">
+        <h4 style="color: #1a1a1a; margin-bottom: 12px;">Geographic Coverage</h4>
+        <p style="color: #555; margin: 0;">We primarily serve organizations in Riverside County, CA, with flexibility for partner organizations and special projects. If you're outside our primary service area, contact us anyway — we may be able to help or connect you with resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-reverse-web.png" alt="CyberDefense Firm">
+          <p>A 501(c)(3) nonprofit dedicated to providing accessible cybersecurity education and protection to underserved communities.</p>
+          <p class="footer-tagline">Cybersecurity for every community.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Risk Assessments</a></li>
+            <li><a href="services.html">Staff Training</a></li>
+            <li><a href="services.html">Incident Response</a></li>
+            <li><a href="services.html">Compliance Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="consulting.html">Pro Consulting</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Started</h4>
+          <ul class="footer-links">
+            <li><a href="get-help.html">Request Help</a></li>
+            <li><a href="donate.html#volunteer">Volunteer</a></li>
+            <li><a href="tel:7608748729">760-874-8729</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CyberDefense Firm | 501(c)(3) Nonprofit | EIN: 33-4559290</span>
+        <span>Indio, CA 92201</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+  </script>
+</body>
+</html>
