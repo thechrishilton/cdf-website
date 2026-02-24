@@ -1,0 +1,57 @@
+# ===========================
+# CyberDefense Firm - .gitignore
+# Security-first configuration
+# ===========================
+
+# --- OS & Editor Files ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# --- Environment & Secrets ---
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+
+# --- API Keys & Config ---
+config.local.*
+*.secret
+api-keys.*
+
+# --- Node / Build ---
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# --- Backup & Temp Files ---
+*.bak
+*.tmp
+*.log
+*.orig
+~$*
+
+# --- Office Lock Files ---
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# --- Archives (don't commit zips) ---
+*.zip
+*.tar.gz
+*.rar
+
+# --- Compiled / Generated ---
+*.min.js
+*.min.css
+*.map
