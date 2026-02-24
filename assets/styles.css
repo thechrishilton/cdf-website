@@ -91,16 +91,13 @@ p { margin-bottom: 1rem; }
 }
 
 /* Dropdown */
-.nav-dropdown { position: relative; }
+.nav-dropdown { position: relative; padding-bottom: 8px; margin-bottom: -8px; }
 .nav-dropdown-menu {
-  display: none; position: absolute; top: 100%; left: 0; background: var(--white);
+  visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 0; background: var(--white);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1); border-radius: 6px; padding: 8px 0;
-  min-width: 180px; padding-top: 16px;
+  min-width: 180px; transition: visibility 0s 0.3s, opacity 0.15s;
 }
-.nav-dropdown-menu::before {
-  content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 16px;
-}
-.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown:hover .nav-dropdown-menu { visibility: visible; opacity: 1; transition: visibility 0s, opacity 0.15s; }
 .nav-dropdown-menu a {
   display: block; padding: 10px 20px; font-size: 0.9rem;
 }
