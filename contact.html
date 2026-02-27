@@ -58,6 +58,7 @@
         <!-- LEFT COLUMN: FORM -->
         <div id="contactFormWrapper">
           <form action="https://formspree.io/f/xeelvana" method="POST" id="contactForm">
+            <input type="hidden" name="_subject" id="_subject" value="">
             <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
               <label for="name">Name</label>
@@ -237,6 +238,7 @@
         alert('Please complete the security check before submitting.');
         return;
       }
+      document.getElementById('_subject').value = '[Contact] ' + document.getElementById('subject').value;
       const data = new FormData(contactForm);
       fetch(contactForm.action, {
         method: 'POST',
