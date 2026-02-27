@@ -55,8 +55,9 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
 
         <!-- LEFT COLUMN: FORM -->
-        <div>
-          <form action="https://formspree.io/f/xeelvana" method="POST">
+        <div id="contactFormWrapper">
+          <form action="https://formspree.io/f/xeelvana" method="POST" id="contactForm">
+            <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -87,6 +88,14 @@
 
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div id="contactThankYou" style="display: none; text-align: center; padding: 60px 20px;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">&#10003;</div>
+            <h2 style="margin-bottom: 12px;">Message Sent</h2>
+            <p style="color: var(--mid-gray);">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+            <a href="index.html" class="btn btn-secondary" style="margin-top: 20px;">Return Home</a>
+          </div>
         </div>
 
         <!-- RIGHT COLUMN: CONTACT INFO -->
@@ -215,6 +224,27 @@
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
       if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    // Handle contact form submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          document.getElementById('contactThankYou').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          alert('There was an issue sending your message. Please try again or email us at info@cyberdefensefirm.org.');
+        }
+      }).catch(() => {
+        alert('There was an issue sending your message. Please try again or email us at info@cyberdefensefirm.org.');
+      });
     });
   </script>
 </body>

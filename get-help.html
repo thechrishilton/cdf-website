@@ -248,8 +248,9 @@
     <div class="container">
       <div class="form-layout">
         <!-- LEFT COLUMN: FORM -->
-        <div>
-          <form action="https://formspree.io/f/xjgejyjd" method="POST">
+        <div id="getHelpFormWrapper">
+          <form action="https://formspree.io/f/xjgejyjd" method="POST" id="getHelpForm">
+            <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
               <label for="fullName">Full Name *</label>
               <input type="text" id="fullName" name="fullName" required>
@@ -289,6 +290,14 @@
 
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 24px; font-size: 1rem;">Request Free Consultation</button>
           </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div id="getHelpThankYou" style="display: none; text-align: center; padding: 60px 20px;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">&#10003;</div>
+            <h2 style="margin-bottom: 12px;">Request Received</h2>
+            <p style="color: var(--mid-gray);">Thank you for reaching out. Our team will review your request and contact you within 48 hours to schedule your free consultation.</p>
+            <a href="index.html" class="btn btn-secondary" style="margin-top: 20px;">Return Home</a>
+          </div>
         </div>
 
         <!-- RIGHT COLUMN: SIDEBAR -->
@@ -417,6 +426,27 @@
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
       if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    // Handle get-help form submission
+    const getHelpForm = document.getElementById('getHelpForm');
+    getHelpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(getHelpForm);
+      fetch(getHelpForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          getHelpForm.style.display = 'none';
+          document.getElementById('getHelpThankYou').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          alert('There was an issue submitting your request. Please try again or call us at (760) 874-8729.');
+        }
+      }).catch(() => {
+        alert('There was an issue submitting your request. Please try again or call us at (760) 874-8729.');
+      });
     });
   </script>
 </body>
