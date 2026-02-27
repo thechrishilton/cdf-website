@@ -1,0 +1,22 @@
+{
+  "forms": {
+    "contactForm": {
+      "name": "CDF Contact Form",
+      "actions": [
+        {
+          "type": "email",
+          "to": "info@cyberdefensefirm.org"
+        }
+      ]
+    },
+    "boardApplication": {
+      "name": "CDF Board Application",
+      "actions": [
+        {
+          "type": "email",
+          "to": "info@cyberdefensefirm.org"
+        }
+      ]
+    }
+  }
+}
