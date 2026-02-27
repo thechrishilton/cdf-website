@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -86,7 +87,9 @@
               <textarea id="message" name="message" rows="6" required></textarea>
             </div>
 
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACi-kJR-OPA-xq5g" data-theme="light" style="margin-bottom: 16px;"></div>
             <button type="submit" class="btn btn-primary">Send Message</button>
+            <p style="margin-top: 12px; font-size: 0.8rem; color: var(--mid-gray);">By submitting this form, you agree to our <a href="privacy.html" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>. Your information is encrypted in transit and will only be used to respond to your inquiry.</p>
           </form>
 
           <!-- SUCCESS MESSAGE -->
@@ -212,7 +215,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 CyberDefense Firm | 501(c)(3) Nonprofit | EIN: 33-4559290</span>
-        <span>Indio, CA 92201</span>
+        <span><a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; Indio, CA 92201</span>
       </div>
     </div>
   </footer>
@@ -229,6 +232,11 @@
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
+      var token = contactForm.querySelector('[name="cf-turnstile-response"]');
+      if (!token || !token.value) {
+        alert('Please complete the security check before submitting.');
+        return;
+      }
       const data = new FormData(contactForm);
       fetch(contactForm.action, {
         method: 'POST',
