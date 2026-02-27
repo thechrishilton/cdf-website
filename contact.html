@@ -238,7 +238,7 @@
         alert('Please complete the security check before submitting.');
         return;
       }
-      document.getElementById('_subject').value = '[Contact] ' + document.getElementById('subject').value;
+      document.getElementById('_subject').value = '[Contact] | ' + document.getElementById('subject').value + ' | ' + document.getElementById('name').value + ' | ' + document.getElementById('email').value;
       const data = new FormData(contactForm);
       fetch(contactForm.action, {
         method: 'POST',
