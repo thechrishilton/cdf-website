@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# Old WordPress URLs → current pages
+
+/support-us     /donate.html    301
+/support-us/    /donate.html    301
