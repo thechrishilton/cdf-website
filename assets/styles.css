@@ -283,14 +283,49 @@ p { margin-bottom: 1rem; }
   .nav-dropdown:hover .nav-dropdown-menu,
   .nav-links.open .nav-dropdown-menu { display: block; }
   .nav-dropdown-menu a { padding: 8px 12px; }
-  h1 { font-size: 1.8rem; }
-  .hero { padding: 120px 0 60px; }
-  .section { padding: 48px 0; }
+
+  /* Kevin feedback: increase headline contrast for mobile */
+  h1 { font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+  h2 { font-weight: 700; }
+  .hero-content h1 { color: var(--white); }
+  .hero-alt .hero-content h1 { color: var(--white); }
+  .page-header h1 { color: var(--white); }
+
+  /* Kevin feedback: tighten spacing between sections */
+  .hero { padding: 110px 0 48px; }
+  .section { padding: 40px 0; }
+  .section-header { margin: 0 auto 32px; }
+  .content-section { padding: 40px 0; }
+
+  /* Kevin feedback: reduce visual padding in stat areas */
+  .proof-item { padding: 20px 12px; }
+  .trust-section { padding: 40px 0; }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* Kevin feedback: increase font weight on key authority statements */
+  .trust-value { font-weight: 700; font-size: 1rem; }
+  .proof-number { font-size: 1.8rem; font-weight: 800; }
+  .proof-label { font-weight: 600; }
+
   .cards-3, .cards-4 { grid-template-columns: 1fr; }
-  .trust-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+  /* Kevin feedback: contact button always visible on mobile */
+  .mobile-cta {
+    display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+    background: var(--navy); padding: 12px 16px; gap: 10px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+  }
+  .mobile-cta .btn {
+    flex: 1; text-align: center; padding: 12px 16px; font-size: 0.9rem;
+  }
+  /* Add bottom padding to body so footer isn't hidden behind sticky CTA */
+  body { padding-bottom: 64px; }
 }
+
+/* Hide mobile CTA on desktop */
+.mobile-cta { display: none; }
 
 /* ============================================
    PAGE-SPECIFIC: Inner pages
@@ -422,6 +457,27 @@ p { margin-bottom: 1rem; }
 }
 @media (max-width: 480px) {
   .proof-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   REACH GRID (about.html)
+   ============================================ */
+.reach-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 800px; margin: 0 auto;
+}
+.reach-item {
+  text-align: center; padding: 24px;
+  background: var(--white); border-radius: 8px;
+}
+.reach-value {
+  font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 6px;
+}
+.reach-label {
+  color: var(--mid-gray); font-size: 0.9rem;
+}
+@media (max-width: 640px) {
+  .reach-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ============================================
