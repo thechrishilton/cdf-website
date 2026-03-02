@@ -422,7 +422,7 @@ p { margin-bottom: 1rem; }
    SOCIAL PROOF / IMPACT NUMBERS
    ============================================ */
 .proof-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   margin-bottom: 48px;
 }
 .proof-item {
