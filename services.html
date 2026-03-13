@@ -8,7 +8,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="canonical" href="https://cyberdefensefirm.org/services.html">
   <meta property="og:title" content="What We Do — CyberDefense Firm Services">
@@ -24,7 +26,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/logo-small.png" alt="CyberDefense Firm" width="255" height="60">
+        <img src="assets/images/logo-small.webp" alt="CyberDefense Firm" width="255" height="60">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="about.html">About Us</a></li>
@@ -188,7 +190,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo-reverse-web.png" alt="CyberDefense Firm" width="400" height="218">
+          <img src="assets/images/logo-reverse-web.webp" alt="CyberDefense Firm" width="400" height="218">
           <p>A 501(c)(3) nonprofit dedicated to providing accessible cybersecurity education and protection to underserved communities.</p>
           <p class="footer-tagline">Cybersecurity for every community.</p>
         </div>
@@ -232,16 +234,6 @@
     <a href="contact.html" class="btn btn-secondary">Contact Us</a>
   </div>
 
-  <script>
-    // Mobile nav toggle
-    document.getElementById('navToggle').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-    // Highlight active nav link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) link.classList.add('active');
-    });
-  </script>
+  <script src="assets/nav.js" defer></script>
 </body>
 </html>
