@@ -124,6 +124,12 @@ p { margin-bottom: 1rem; }
 }
 .hero-desc { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.7; }
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero .btn-secondary, .hero-alt .btn-secondary, .mobile-cta .btn-secondary, .cta-panel-dark .btn-secondary {
+  color: var(--white); border-color: rgba(255,255,255,0.6);
+}
+.hero .btn-secondary:hover, .hero-alt .btn-secondary:hover, .mobile-cta .btn-secondary:hover, .cta-panel-dark .btn-secondary:hover {
+  background: rgba(255,255,255,0.15); border-color: var(--white); color: var(--white);
+}
 .hero-visual {
   display: flex; justify-content: center; align-items: center;
 }
@@ -153,7 +159,7 @@ p { margin-bottom: 1rem; }
 .section-header p { color: var(--mid-gray); font-size: 1.1rem; }
 .section-label {
   display: inline-block; font-size: 0.8rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 2px; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 2px; color: var(--accent-hover);
   margin-bottom: 8px;
 }
 .gold-bar {
